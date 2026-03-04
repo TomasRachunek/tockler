@@ -147,6 +147,9 @@ export const ItemsTable = ({
             {
                 header: 'Duration',
                 accessorFn: (record: ITrackItem) => diffAndFormatShort(record.beginDate, record.endDate),
+                sortingFn: (rowA, rowB) =>
+                    differenceInMilliseconds(rowA.original.endDate, rowA.original.beginDate) -
+                    differenceInMilliseconds(rowB.original.endDate, rowB.original.beginDate),
                 enableColumnFilter: false,
                 enableSorting: !manualSortBy,
                 size: 60,
