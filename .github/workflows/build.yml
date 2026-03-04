@@ -112,9 +112,6 @@ jobs:
 
             - name: Build Electron App
               shell: bash
-              env:
-                  CSC_IDENTITY_AUTO_DISCOVERY: false
-
               run: |
                   cd electron
                   # Add flag to reduce console output
